@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module ALU(
     input [31:0] A,
     input [31:0] B,
@@ -6,6 +8,7 @@ module ALU(
     output Zero
 );
 
+    // Zero flag: goes high when Result is zero
     assign Zero = (Result == 32'b0);
 
     always @(*) begin
@@ -15,7 +18,7 @@ module ALU(
             4'b0000: Result = A & B;  // AND
             4'b0001: Result = A | B;  // OR
             // Additional operations...
-            default: Result = 32'b0;
+            default: Result = 32'b0;  // Default 
         endcase
     end
 endmodule
