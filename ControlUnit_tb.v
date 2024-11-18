@@ -22,6 +22,11 @@ module ControlUnit_tb;
 
     // Test procedure
     initial begin
+    
+        // Setup waveform dumping
+        $dumpfile("CU_waveform.vcd"); // Name of the VCD file
+        $dumpvars(0, ControlUnit_tb);         
+
         // Monitor output
         $monitor("Time = %0t | Opcode = %b | ALUOp = %b | reg_write = %b | branch = %b | mem_read = %b | mem_write = %b", 
                  $time, opcode, ALUOp, reg_write, branch, mem_read, mem_write);
