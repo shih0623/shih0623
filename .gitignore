@@ -1,0 +1,7 @@
+# Ignore Verilog simulation output files
+*.out
+*.vcd
+
+# Optional: Ignore other temporary files
+*.log
+*.tmp
